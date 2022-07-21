@@ -18,9 +18,3 @@ From package '[twist_to_ackermann]()'
 - `use_stamps`: If true, TwistStamped and AckermannDriveStamped messages will be used. defualt: false
 - `wheelbase`: The wheelbase of your vehicle in meters (float). Required, but defaults to 1.0
 
-# Launch
-## File 
- ./launch/WLD.launch.py 
- 
- just launch I guess 
-

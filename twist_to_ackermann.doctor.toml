@@ -29,8 +29,3 @@ description = 'If true, TwistStamped and AckermannDriveStamped messages will be 
 [[nodes.params]]
 name = 'wheelbase'
 description = 'The wheelbase of your vehicle in meters (float). Required, but defaults to 1.0'
-
-#Your launchfile info (optional)
-[[nodes.launch]]
-file_path = './launch/WLD.launch.py'
-usage = 'just launch I guess'
