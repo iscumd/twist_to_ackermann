@@ -1,0 +1,36 @@
+#ROS package you are documenting
+package_name = "twist_to_ackermann"
+repo = ""
+
+#You can have multiple nodes in one package
+[[nodes]]
+node_name = 'twist_to_ackermann'
+#Relitive to this file
+source_file = ['./src/twist_to_ackermann.cpp']
+summary = '''
+Translates twist commands to ackermann drive commands, to be used in car-like robots.
+'''
+
+#Your published topics (optional)
+[[nodes.publishes]]
+name = '/ack_vel'
+description = 'A stamped or unstamped ackermann drive command resulting from the translation.'
+
+#Your subscribed topics (optional)
+[[nodes.subscribes]]
+name = '/nav_vel'
+description = 'The stamped or unstamped twist message to convert.'
+
+#Your node parameters (optional)
+[[nodes.params]]
+name = 'use_stamps'
+description = 'If true, TwistStamped and AckermannDriveStamped messages will be used. defualt: false'
+
+[[nodes.params]]
+name = 'wheelbase'
+description = 'The wheelbase of your vehicle in meters (float). Required, but defaults to 1.0'
+
+#Your launchfile info (optional)
+[[nodes.launch]]
+file_path = './launch/WLD.launch.py'
+usage = 'just launch I guess'

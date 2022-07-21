@@ -36,6 +36,9 @@ target_include_directories(twist_to_ackermann PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 
+install(TARGETS twist_to_ackermann
+DESTINATION lib/${PROJECT_NAME})
+
 # test
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
