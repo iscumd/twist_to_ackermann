@@ -16,6 +16,9 @@ double convert_trans_rot_vel_to_steering_angle(double vel, double omega, double 
     return 0;
   }
 
+  // Remove negative so steering doesn't reverse when reversing.
+  vel = std::abs(vel);
+
   auto rad = vel / omega;
   return std::atan(wheelbase / rad);
 }
@@ -43,7 +46,7 @@ TwistToAckermann::TwistToAckermann(rclcpp::NodeOptions options)
         _ack_pub = this->create_publisher<ackermann_msgs::msg::AckermannDrive>("/ack_vel", 10);
       } 
 
-      _wheelbase = this->declare_parameter("wheelbase", 1);
+      _wheelbase = this->declare_parameter("wheelbase", 1.0);
 }
 
 void TwistToAckermann::twist_cb(geometry_msgs::msg::Twist::SharedPtr msg) {
