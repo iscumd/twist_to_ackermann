@@ -7,7 +7,6 @@
 
 namespace tta
 {
-
 /// Finds the appropriate steering angle for some turning radius, which is defined by the
 /// transient velocity of the vehicle along that curve (just the current velocity in this instance),
 /// and the rate that curve changes (angular z rotation). This angle is effected by vehicle wheelbase.
